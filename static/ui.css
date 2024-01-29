@@ -1,23 +1,52 @@
 /* General Styles */
-body {
-    font-family: 'Arial', sans-serif;
+body, html {
+    height: 100%;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4; /* light background for contrast */
+    font-family: 'Arial', sans-serif;
+    background-color: #EFF3F6; /* Adjusted background color for a subtle gradient effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Header Styles */
-.header {
-    background-color: #262262; /* Hypergamma Blue */
-    color: white;
-    text-align: left;
-    padding: 10px 20px;
+.app-header {
+    display: flex;
+    justify-content: space-between; /* Aligns logo to the left and profile icon to the right */
+    align-items: center; /* Centers items vertically */
+    width: 100%;
+    background-color: #FFF;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Modern shadow effect */
+    padding: 0 20px; /* Padding on the sides */
+    box-sizing: border-box; /* Ensures padding does not affect overall width */
+    position: fixed; /* Keeps the header at the top */
+    top: 0;
+    z-index: 1000;
 }
 
-/* Logo */
-.header img {
+/* Logo Style */
+.app-header .logo {
     height: 50px; /* Adjust as needed */
 }
+
+/* Profile Icon Style */
+.profile-icon {
+    /* Placeholder styles, replace with actual icon styles */
+    width: 32px; /* Example size, adjust as needed */
+    height: 32px; /* Example size, adjust as needed */
+    background-color: #C41889; /* Example background color */
+    border-radius: 50%; /* Makes it circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-header .profile {
+    width: 24px; /* Adjust according to actual icon size */
+    height: 24px; /* Adjust according to actual icon size */
+    /* If using FontAwesome or similar, you can add the icon here */
+}
+
 
 /* Colorful Banner with Gradient */
 .cognitive-banner {
