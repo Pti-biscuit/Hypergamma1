@@ -2,12 +2,16 @@
 body, html {
     height: 100%;
     margin: 0;
+    padding: 0;
     font-family: 'Arial', sans-serif;
     background-color: #EFF3F6; /* Adjusted background color for a subtle gradient effect */
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
+
+*, *:before, *:after {
+    box-sizing: border-box; /* Include padding and borders in all elements' total width and height */
+}
+
+
 
 /* Header Styles */
 .app-header {
@@ -22,19 +26,24 @@ body, html {
     position: fixed; /* Keeps the header at the top */
     top: 0;
     z-index: 1000;
+    padding-left: 20px; 
 }
 
 /* Logo Style */
 .app-header .logo {
-    height: 50px; /* Adjust as needed */
+    max-height: 15px; /* Max-height to maintain aspect ratio */
+    max-width: 100%; /* Ensures the logo doesn't exceed its container width */
+    width: auto; /* Maintains aspect ratio */
+    height: auto; /* Maintains aspect ratio */
+    /* If you want to set a specific width, replace 'auto' with a value like '120px' */
 }
 
 /* Profile Icon Style */
 .profile-icon {
     /* Placeholder styles, replace with actual icon styles */
-    width: 32px; /* Example size, adjust as needed */
-    height: 32px; /* Example size, adjust as needed */
-    background-color: #C41889; /* Example background color */
+    width: 40px; /* Example size, adjust as needed */
+    height: 40px; /* Example size, adjust as needed */
+    background-color: #EFF3F6; /* Example background color */
     border-radius: 50%; /* Makes it circular */
     display: flex;
     justify-content: center;
@@ -47,26 +56,46 @@ body, html {
     /* If using FontAwesome or similar, you can add the icon here */
 }
 
+/* Body is to allow the header to scroll zith the rest */
+body {
+    padding-top: 70px; /* This should be equal to or greater than the height of your app-header */
+    display: flex;
+    flex-direction: column; /* Stack children elements vertically */
+    justify-content: flex-start; /* Align to the top */
+    align-items: center;
+    height: auto; /* Let the body grow as needed */
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #EFF3F6;
+}
+
 
 /* Colorful Banner with Gradient */
 .cognitive-banner {
+    width: 100%; /* Full width */
     background: linear-gradient(to right, #262262, #C41889); /* Gradient from Blue to Purple-Pink */
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 10px 0;
     font-size: 24px;
     font-weight: bold;
+    position: relative; /* For the pseudo-element positioning */
+    overflow: hidden; /* To contain the pseudo-elements */
 }
+
 
 /* Graph Container Styles */
 .graph-container {
+    width: 80%; /* Let the container take up 80% of the body width */
+    justify-content: space-around; /* Maintain space around items */
     display: flex;
-    justify-content: space-around;
     padding: 20px;
 }
 
 .stress-fatigue-graph, .efficiency-graph {
     background-color: white;
+    width: calc(70% - 10px); /* Adjust the subtracted value to increase the gap between the boxes *
+    justify-content: space-around; /* Maintain space around items */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for floating effect */
