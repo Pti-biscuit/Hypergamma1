@@ -93,8 +93,8 @@ body {
 .circle-widget {
     background-color: transparent; /* Make the background transparent */
     color: #262262; /* Dark blue text, or any color you prefer */
-    border: 5px solid #FFF; /* Solid border for the contour, adjust color as needed */
-    border-radius: 50%; /* Circular shape */
+    border-radius: 80%;
+    border-color: #FFF;
     width: 150px; /* Adjust the size of the circle */
     height: 150px; /* Height of the circle, should be equal to width for a perfect circle */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
@@ -103,6 +103,24 @@ body {
     align-items: center; /* Center content horizontally */
     justify-content: center; /* Center content vertically */
     z-index: 5; /* Ensure it's above other elements */
+    position: relative; /* Ensure position is relative for pseudo-elements */
+}
+
+/* Add pseudo-element for the conic-gradient border */
+.circle-widget::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(#FFF 0%, #FFF 80%, transparent 80%, transparent 100%);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
 }
 
 .circle-content {
