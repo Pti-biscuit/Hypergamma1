@@ -97,20 +97,25 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    width: 150px;
-    height: 150px;
+    /* Ensure the container is large enough to fit the circle including its stroke */
+    width: 160px;
+    height: 160px;
     z-index: 5;
     /* No background or border specified here since it's handled by the SVG */
+    margin-top: 20px; /* Add margin to ensure it's not clipped by the top of the container */
+
 }
 
 .circle-widget svg {
+    width: 100%; /* Ensure SVG fills the container */
+    height: auto; /* Maintain aspect ratio */
     transform: rotate(-90deg); /* Rotate to start progress from the top */
 }
 
 
 .circle-content {
     position: absolute;
-    font-size: 3rem; /* Large font size for the number */
+    font-size: 2.5rem; /* Large font size for the number */
     font-weight: bold; /* Bold font weight for the number */
     line-height: 1; /* Adjust line-height to fit the number vertically */
     justify-content: center; /* Center content vertically */
