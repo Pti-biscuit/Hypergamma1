@@ -92,45 +92,30 @@ body {
 /* Circle Widget Style */
 
 .circle-widget {
-    background-color: transparent; /* Make the background transparent */
-    color: #262262; /* Dark blue text, or any color you prefer */
-    border-radius: 80%;
-    border: 5px solid #FFF; /* Specify border width, style, and color */
-    width: 150px; /* Adjust the size of the circle */
-    height: 150px; /* Height of the circle, should be equal to width for a perfect circle */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-    display: flex; /* To enable flexbox alignment */
-    flex-direction: column; /* Stack children vertically */
-    align-items: center; /* Center content horizontally */
-    justify-content: center; /* Center content vertically */
-    z-index: 5; /* Ensure it's above other elements */
-    position: relative; /* Ensure position is relative for pseudo-elements */
-    margin-top: 20px; /* Adjust margin as needed to ensure visibility */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    z-index: 5;
+    /* No background or border specified here since it's handled by the SVG */
 }
 
-/* Add pseudo-element for the conic-gradient border */
-.circle-widget::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: conic-gradient(#FFF 0%, #FFF 80%, transparent 80%, transparent 100%);
-    -webkit-mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
+.circle-widget svg {
+    transform: rotate(-90deg); /* Rotate to start progress from the top */
 }
+
 
 .circle-content {
+    position: absolute;
     font-size: 3rem; /* Large font size for the number */
     font-weight: bold; /* Bold font weight for the number */
     line-height: 1; /* Adjust line-height to fit the number vertically */
     justify-content: center; /* Center content vertically */
     color: #FFF; /* White color for the number */
+    z-index: 6; /* Ensure number is above the SVG */
 
 }
 
