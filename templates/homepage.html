@@ -30,7 +30,17 @@
         </div>
         <div class="data-label">Cognitive Score</div>
     </div>
-    
+
+    <!-- SVG Wave at the bottom of the cognitive banner -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style="width: 100%; height: auto; transform: rotate(180deg);">
+        <defs>
+            <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#C41889; stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#262262; stop-opacity:1" />
+            </linearGradient>
+        </defs>
+        <path d="M0,60 C300,180 900,-60 1200,60 L1200 120 L0 120 Z" fill="url(#waveGradient)"/>
+    </svg>
     <!-- Graph Containers -->
     <div class="graph-container">
         <div class="stress-fatigue-graph">

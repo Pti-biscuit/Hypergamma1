@@ -86,7 +86,16 @@ body {
     flex-direction: column; /* Organize children in a column */
     justify-content: center; /* Center children vertically */
     align-items: center; /* Center children horizontally */
-    padding: 75px 0; /* Adjust padding as needed to ensure the border is fully visible */
+    padding-bottom: 100px; /* Adjust based on the height of your SVG wave */
+}
+
+.banner-wave {
+    position: absolute;
+    bottom: 0; /* Adjust this value as needed, set to -1px to ensure no gap */
+    width: 100%;
+    height: auto;
+    transform: rotate(180deg);
+    background: linear-gradient(to right, #262262, #C41889); /* Adjust the fill color to match the wave's desired color */
 }
 
 /* Circle Widget Style */
