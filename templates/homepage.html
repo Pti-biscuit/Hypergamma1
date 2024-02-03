@@ -18,9 +18,9 @@
     <!-- Colorful Banner for Cognitive Ranking -->
     <div class="cognitive-banner">
         <div class="circle-widget">
-            <div class="circle-content">128</div> <!-- Dynamic content here -->
+            <div class="circle-content">80</div> <!-- Dynamic content here -->
         </div>
-        
+
         <div class="data-label">Cognitive Score</div>
 
     </div>
@@ -34,5 +34,28 @@
             <!-- Insert Efficiency Graph here -->
         </div>
     </div>
+
+      <!-- JavaScript to dynamically adjust the circle based on the score -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            function updateCircle() {
+                var score = parseInt(document.querySelector('.circle-content').textContent, 10);
+                var percentage = score; // Assuming score is already a percentage (0 to 100)
+                
+                // Calculate the degree to which the border should be shown
+                var degree = percentage * 360 / 100;
+    
+                // Update the circle's background to reflect the score
+                var circleWidget = document.querySelector('.circle-widget');
+                if(circleWidget) {
+                    var gradient = `conic-gradient(#FFF ${degree}deg, transparent ${degree}deg 360deg)`;
+                    circleWidget.style.background = gradient;
+                }
+            }
+    
+            updateCircle(); // Call the function on page load
+        });
+        </script>
+        
 </body>
 </html>
