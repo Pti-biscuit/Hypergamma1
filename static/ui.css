@@ -91,6 +91,7 @@ body {
 /* Circle Widget Style */
 
 .circle-widget {
+<<<<<<< Updated upstream
     background-color: transparent; /* Make the background transparent */
     color: #262262; /* Dark blue text, or any color you prefer */
     border-radius: 80%;
@@ -121,10 +122,34 @@ body {
         linear-gradient(#fff 0 0);
     -webkit-mask-composite: destination-out;
     mask-composite: exclude;
+=======
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* Ensure the container is large enough to fit the circle including its stroke */
+    width: 160px;
+    height: 160px;
+    z-index: 5;
+    margin-top: 20px; /* Add margin to ensure it's not clipped by the top of the container */
+    /* No background or border specified here since it's handled by the SVG */
+}
+
+.circle-widget svg {
+    width: 100%; /* Ensure SVG fills the container */
+    height: auto; /* Maintain aspect ratio */
+    transform: rotate(-90deg); /* Rotate to start progress from the top */
+>>>>>>> Stashed changes
 }
 
 .circle-content {
+<<<<<<< Updated upstream
     font-size: 3rem; /* Large font size for the number */
+=======
+    position: absolute;
+    font-size: 2.5rem; /* Large font size for the number */
+>>>>>>> Stashed changes
     font-weight: bold; /* Bold font weight for the number */
     line-height: 1; /* Adjust line-height to fit the number vertically */
     justify-content: center; /* Center content vertically */
