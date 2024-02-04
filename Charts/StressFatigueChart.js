@@ -3,24 +3,25 @@ document.addEventListener('DOMContentLoaded', function() {
   var stressFatigueChart = new Chart(ctx, {
       type: 'bar',
       data: {
-          labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+          labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
           datasets: [
+            {
+              label: 'Average Fatigue Level',
+              data: [72, 35, 90, 34, 12, 18, 24],
+              type: 'line',
+              fill: false,
+              borderColor: '#262262',
+              tension: 0.4,
+              yAxisID: 'y-axis-fatigue'
+          },
               {
-                  label: 'Stress Level',
-                  data: [12, 19, 3, 5, 2, 3],
-                  backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                  borderColor: 'rgba(255, 99, 132, 1)',
+                  label: 'Average Stress Level',
+                  data: [90, 50, 83, 20, 10, 18, 12, 20],
+                  backgroundColor: 'rgba(196, 24, 137, 0.75)',
+                  borderColor: 'rgba(196, 24, 137, 1)',
                   borderWidth: 1,
-                  yAxisID: 'y-axis-stress'
-              },
-              {
-                  label: 'Fatigue Level',
-                  data: [2, 3, 4, 5, 3],
-                  type: 'line',
-                  fill: false,
-                  borderColor: 'rgb(54, 162, 235)',
-                  tension: 0.1,
-                  yAxisID: 'y-axis-fatigue'
+                  yAxisID: 'y-axis-stress',
+                  borderRadius: {topLeft: 3, topRight: 3, bottomLeft: 0, bottomRight: 0},
               }
           ]
       },

@@ -70,6 +70,18 @@ body {
     background-color: #EFF3F6;
 }
 
+h1 {
+    opacity: 0.7;
+    font-size: 15px; /* Sets the size of the font */
+    color: #262262; /* Sets the text color */
+    text-align: center; /* Aligns text to the center */
+    text-shadow: 2px 2px 4px #FFF; /* Adds a shadow to the text */
+    margin-top: 5px; /* Adds space above the h1 */
+    margin-bottom: 20px; /* Adds space below the h1 */
+    font-family: 'Arial', sans-serif; /* Sets the font family */
+    font-weight: bold; /* Makes the font bold */
+}
+
 /* Colorful Banner with Gradient */
 .cognitive-banner {
     width: 100%; /* Full width */
