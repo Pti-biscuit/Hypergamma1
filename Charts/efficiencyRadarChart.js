@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
       }]
     },
     options: {
+      maintainAspectRatio: true, // This ensures the aspect ratio is maintained
+      aspectRatio: 2, // Adjust this value as needed to fit the graph within its container
       scales: {
         r: {
           beginAtZero: false,

@@ -154,28 +154,61 @@ h1 {
     margin-top: 20px; /* Increase top margin if needed */
 }
 
-
 /* Graph Container Styles */
 .graph-container {
-    width: 80%; /* Let the container take up 80% of the body width */
-    justify-content: space-around; /* Maintain space around items */
     display: flex;
-    padding: 20px;
+    flex-direction: column; /* Stack children vertically by default */
+    align-items: center; /* Center children horizontally */
+    width: 100%; /* Full width */
+    gap: 20px; /* Space between items */
+    padding: 20px; /* Padding around the container */
 }
 
+/* Adjustments for Graph Titles */
+.graph-container h1 {
+    text-align: center; /* Center-align titles */
+    width: 100%; /* Ensure the title spans the full width of its container */
+    margin: 0 0 10px; /* Adjust margin to create space between title and graph */
+}
+
+/* Ensuring Graph Containers Have the Same Size */
 .stress-fatigue-graph, .efficiency-graph {
-    background-color: white;
-    width: calc(70% - 10px); /* Adjust the subtracted value to increase the gap between the boxes *
-    justify-content: space-around; /* Maintain space around items */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center contents vertically */
+    align-items: center; /* Center contents horizontally */
     padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for floating effect */
-    width: 45%; /* Adjust width as needed */
+    background-color: white;
+    margin-bottom: 20px; /* Space between graphs */
+    width: 100%; /* Full width for responsiveness */
+    max-width: 600px; /* Maximum width */
+    min-height: 400px; /* Minimum height to ensure containers are the same size */
 }
 
-#stressFatigueChart {
-    height: 400px;
-    width: 600px;
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .graph-container {
+        flex-direction: row; /* Side by side for larger screens */
+        justify-content: space-evenly; /* Evenly space the graphs within the container */
+        align-items: flex-start; /* Align items to the top */
+    }
+    
+    .stress-fatigue-graph, .efficiency-graph {
+        width: calc(50% - 20px); /* Adjust width for side by side layout, accounting for the gap */
+        /* Ensure graphs have the same height */
+        height: auto; /* Allow height to adjust based on content */
+        max-height: 400px; /* Set a maximum height or adjust as needed */
+    }
+    
+    /* Responsive Canvas Size */
+    #stressFatigueChart, #efficiencyRadarChart {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 2 / 1;
+    }
 }
 
 
