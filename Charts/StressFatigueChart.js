@@ -28,17 +28,26 @@ document.addEventListener('DOMContentLoaded', function() {
       options: {
           scales: {
               'y-axis-stress': {
-                  beginAtZero: true,
+                  ticks: {
+                    beginAtZero: true,
+                    max: 100 // Set the maximum value
+                },
                   position: 'left',
-                  type: 'linear'
+                  type: 'linear',
+                  grid: {
+                    display: false // This will remove the grid lines for y-axis-stress
+                }
               },
               'y-axis-fatigue': {
-                  beginAtZero: true,
+                  ticks: {
+                    beginAtZero: true,
+                    max: 100 // Set the maximum value
+                },
                   position: 'right',
                   type: 'linear',
                   grid: {
-                      drawOnChartArea: false // ensure that the grid lines of the second y-axis do not show
-                  }
+                    display: false // This will remove the grid lines for y-axis-fatigue
+                }
               }
           }
       }

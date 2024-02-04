@@ -3,7 +3,7 @@ body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #EFF3F6; /* Adjusted background color for a subtle gradient effect */
 }
 
@@ -66,7 +66,7 @@ body {
     align-items: center;
     height: auto; /* Let the body grow as needed */
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #EFF3F6;
 }
 
@@ -78,7 +78,7 @@ h1 {
     text-shadow: 2px 2px 4px #FFF; /* Adds a shadow to the text */
     margin-top: 5px; /* Adds space above the h1 */
     margin-bottom: 20px; /* Adds space below the h1 */
-    font-family: 'Arial', sans-serif; /* Sets the font family */
+    font-family: 'Poppins', sans-serif; /* Sets the font family */
     font-weight: bold; /* Makes the font bold */
 }
 
@@ -183,8 +183,8 @@ h1 {
     background-color: white;
     margin-bottom: 20px; /* Space between graphs */
     width: 100%; /* Full width for responsiveness */
-    max-width: 600px; /* Maximum width */
-    min-height: 400px; /* Minimum height to ensure containers are the same size */
+    max-width: 700px; /* Maximum width */
+    min-height: 500px; /* Minimum height to ensure containers are the same size */
 }
 
 
