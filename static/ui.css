@@ -161,6 +161,14 @@ body {
     width: 45%; /* Adjust width as needed */
 }
 
+#stressFatigueChart {
+    height: 400px;
+    width: 600px;
+    background:#262262;
+    color:#C41889;
+}
+
+
 
 /* Additional Styling */
 /* You can add more styles for fonts, buttons, or other elements as needed */
