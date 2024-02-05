@@ -88,8 +88,10 @@ h1 {
     align-items: center;
     flex-wrap: nowrap; /* Prevent wrapping */
     overflow-x: auto; /* Allow horizontal scrolling on small screens */
-    margin: 0 auto; /* Center the container */
-    padding: 2px 0; /* Add vertical padding */
+    padding: 20px 0; /* Increase padding to give space below the header */
+    margin-top: 60px; /* Adjust based on header height to prevent overlap */
+    gap: 1px; /* Adjust gap between gauges */
+    width: 100%; /* Ensures the container takes full width */
   }
   
   .gauge-container {
@@ -97,32 +99,40 @@ h1 {
     width: 100px; /* Fixed width for the gauge */
     height: 50px; /* Half height since it's a semi-circle */
     text-align: center; /* Center the day letter and date number */
+    padding-inline: 2px ;
   }
   
-  .gauge-day .day-letter {
-    font-size: 0.75rem; /* Smaller font size for the day letter */
-    color: #262262; /* White text color */
+  /* Positioning the day letter above the gauge */
+  .day-letter {
+    position: absolute;
+    top: -20px; /* Position day letter above the gauge */
+    width: 100%;
+    font-size: 0.75rem;
+    color: #262262;
+    justify-content: center;
+}
+
+/* Adjust the size and position of the gauge canvas */
+    .gauge canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px; /* Full width */
+    height: 50px; /* Full height for a complete circle, half will be hidden */
+    aspect-ratio: 1; /* Keep the aspect ratio to 1 to make it a circle */
   }
-  
-  .gauge-day .date-number {
+
+  .date-number {
     position: absolute;
     left: 50%;
     top: 75%;
     transform: translate(-50%, -50%); /* Center in the middle of the gauge */
-    font-size: 1.25rem; /* Larger font size for the date number */
+    font-size: 1rem; /* Larger font size for the date number */
     color: #262262; /* White text color */
     text-align: center;
     font-family: 'Poppins', sans-serif; /* Sets the font family */
   }
   
-  /* Adjust the size and position of the gauge canvas */
-  .gauge canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100px; /* Full width */
-    height: 100px; /* Full height for a complete circle, half will be hidden */
-  }
   
   @media (max-width: 768px) {
     .week-gauges {
@@ -139,8 +149,8 @@ h1 {
       height: 60px; /* Match container width for a full circle */
     }
   
-    .gauge-day .date-number {
-      font-size: 1rem; /* Adjust font size for smaller screens */
+    .date-number {
+      font-size: 0.75rem; /* Adjust font size for smaller screens */
     }
   }
 
