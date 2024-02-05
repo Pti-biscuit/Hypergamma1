@@ -89,7 +89,7 @@ h1 {
     flex-wrap: nowrap; /* Prevent wrapping */
     overflow-x: auto; /* Allow horizontal scrolling on small screens */
     padding: 20px 0; /* Increase padding to give space below the header */
-    margin-top: 60px; /* Adjust based on header height to prevent overlap */
+    margin-top: 5px; /* Adjust based on header height to prevent overlap */
     gap: 1px; /* Adjust gap between gauges */
     width: 100%; /* Ensures the container takes full width */
   }
