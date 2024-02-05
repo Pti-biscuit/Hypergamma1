@@ -11,6 +11,25 @@ body, html {
     box-sizing: border-box; /* Include padding and borders in all elements' total width and height */
 }
 
+body.login-page {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #262262, #C41889); /* Gradient background */
+}
+
+.login-circle {
+    position: absolute;
+    width: 50vw; /* Adjust size as needed */
+    height: 50vw;
+    background-color: #FFF; /* White background for the circle */
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds some depth */
+}
+
 
 
 /* Header Styles */
