@@ -24,21 +24,21 @@ body.login-page {
 .background-image {
     position: absolute;
     right: 0; /* Position it at the left edge of the container */
-    bottom: 0; /* Position it at the top of the container */
-    width: 18cm; /* Adjust width as needed */
-    height: 20cm; /* Adjust height as needed */
+    bottom: 0; /* Position it at the bottom of the container */
+    width: 18vw; /* Consider using vw or vh for responsiveness */
+    height: 20vw; /* Consider using vw or vh for responsiveness */
     background-image: url('../static/cornerleft.png');
     background-size: cover;
     background-position: center left; /* Adjust if you want to change how the image is positioned within the element */
-    z-index: 0; /* Ensure it's behind the circle */
-    transform: rotate(-360deg);
+    z-index: -1; /* Ensure it's behind the circle */
+    transform: rotate(-360deg); /* Consider adjusting the rotation value */
 }
-
 
 .login-circle {
     position: absolute;
-    width: 60vw; /* Adjust size based on design requirements */
-    height: 60vw;
+    width: 60vw; /* This makes the circle responsive */
+    max-width: 500px; /* Maximum width to ensure it doesn't get too large on bigger screens */
+    aspect-ratio: 1 / 1; /* Maintain the circle shape */
     background-color: #FFF; /* White background for the circle */
     border-radius: 50%;
     display: flex;
@@ -48,22 +48,17 @@ body.login-page {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: float 3s ease-in-out infinite; /* Apply the floating animation */
+    animation: float 3s ease-in-out infinite; /* Keep the floating animation */
 }
 
-
 @keyframes float {
-    0% {
-      transform: translate(-50%, -50%) translateY(0);
+    0%, 100% {
+        transform: translate(-50%, -50%) translateY(0);
     }
     50% {
-      transform: translate(-50%, -50%) translateY(-20px);
+        transform: translate(-50%, -50%) translateY(-20px);
     }
-    100% {
-      transform: translate(-50%, -50%) translateY(0);
-    }
-  }
-  
+}
 
 .login-form {
     display: flex;
@@ -83,21 +78,41 @@ body.login-page {
 
 .login-form input {
     padding: 10px;
-    width: 450px; /* Adjust based on design requirements */
+    width: 80%; /* Make input width responsive */
+    max-width: 450px; /* Adjust based on design requirements */
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 10px;
 }
-/* Existing styles unchanged */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .background-image {
+        width: 50vw; /* Adjust width for smaller screens */
+        height: auto; /* Adjust height to maintain aspect ratio */
+    }
+
+    .login-circle {
+        width: 80vw; /* Increase width for smaller screens to ensure visibility */
+    }
+
+    .login-form input,
+    .login-form button {
+        width: 90%; /* Increase width percentage for smaller screens */
+    }
+}
 
 /* Adjust button styling for both Log In and Sign Up */
 .login-form button {
     padding: 10px 20px;
-    width: 450px; /* Ensure consistency in width */
+    width: 100%; /* Make the button width responsive */
+    max-width: 450px; /* Maximum width to maintain a reasonable size */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px; /* Space between buttons */
+    font-size: 1rem; /* Adjust font size for better readability */
+    transition: background-color 0.3s; /* Smooth transition for hover effects */
 }
 
 /* Specific styling for the Log In button */
@@ -106,8 +121,9 @@ body.login-page {
     color: white;
 }
 
-.login-btn:hover {
+.login-btn:hover, .login-btn:focus { /* Focus added for accessibility */
     background-color: #a3157a;
+    outline: none; /* Remove outline for a clean look, ensure accessibility through other means */
 }
 
 /* Specific styling for the Sign Up button */
@@ -115,11 +131,15 @@ body.login-page {
     background-color: #FFF;
     color: #C41889;
     border: 2px solid #C41889; /* Adds a border to distinguish it from the Log In button */
+    transition: all 0.3s; /* Smooth transition for hover and focus states */
 }
 
-.signup-btn:hover {
-    background-color: #f2e2f2;
+.signup-btn:hover, .signup-btn:focus {
+    background-color: #f2e2f2; /* Lighter pink background on hover/focus */
+    color: #C41889; /* Ensure text color remains consistent */
+    outline: none;
 }
+
 
 /* Header Styles */
 .app-header {
