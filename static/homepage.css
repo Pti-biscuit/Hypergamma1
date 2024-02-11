@@ -4,91 +4,102 @@ body, html {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to right, #262262, #C41889); /* Gradient background */
+    display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0;
+    overflow: hidden;
+    position: relative; /* Needed to position the pseudo-element */
 }
+
+/* Transparent Overlay */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.2); /* White color with 20% opacity */
+    z-index: 1; /* Above the background, below the content */
+}
+
+/* Ensure container and its children are above the overlay */
+.container, .container * {
+    position: relative;
+    z-index: 2;
+}
+
 
 .container {
-    width: 80%; /* Take up 80% of the page's width */
-    max-width: 1800px; /* Optional: if you want to limit the maximum width */
-    margin: 0 auto; /* Centering the container */
+    width: 80%;
+    max-width: 1800px;
     display: grid;
-    grid-template-columns: repeat(12, 1fr); /* Create a 12-column grid */
+    grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto auto;
-    gap: 20px; /* Space between grid items */
-    background: transparent; /* Ensure the background is transparent */
-    padding: 20px; /* Padding to prevent content from touching the edges */
+    gap: 20px;
 }
 
-/* Set the column span for each box */
-.profile-box {
-    grid-column: span 3; /* Profile box takes up 3 of 12 columns (25%) */
-}
-
-.activity-reports-box {
-    grid-column: 4 / span 9; /* Starts at 4th column line and spans 9 columns */
-}
-
-.upcoming-activities-box {
-    grid-column: span 8; /* Upcoming activities box takes up 8 of 12 columns (roughly 65%) */
-}
-
-.new-session-box {
-    grid-column: 9 / span 4; /* Starts at 9th column line and spans 4 columns */
-}
-
-
-
-
-/* Remove the background from the generic floating-box class to avoid the box effect on the background */
+/* Floating Boxes Styles */
 .floating-box {
-    background: none; /* No background for the general floating box */
-    border-radius: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    background: #FFFFFF; /* Default background for content areas */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden; /* Ensures that children elements do not overflow the rounded corners */
+    transition: transform 0.3s ease;
 }
 
 .floating-box:hover {
     transform: translateY(-5px);
 }
 
-/* Header of each box */
 .floating-box .header {
-    background: #d2d2d7;
-    color: #333; /* Dark text color for contrast */
-    padding: 10px 20px;
-    font-size: 1.2rem;
-}
-
-/* Profile Box - Full grey */
-.profile-box {
-    background: #d2d2d7; /* Full grey background */
-    grid-row: 1;
-}
-
-/* Activity Reports Box - Grey header */
-.activity-reports-box {
-    grid-row: 1;
-    grid-column: span 2;
-}
-
-/* Upcoming Activities Box - Grey header */
-.upcoming-activities-box {
-    grid-row: 2;
-}
-
-/* New Session Box - Grey header */
-.new-session-box {
-    grid-row: 2;
-}
-
-/* Content of each box */
-.floating-box .content {
-    background: #FFFFFF; /* White background for the content area */
+    background: #EAF3FB;
     color: #333;
-    padding: 20px;
-    height: 90%; /* Adjust the height of the content to be 90% of the box */
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+/* Specific Box Styles */
+.profile-box {
+    background: #EAF3FB; /* Full grey background for the entire box */
+    grid-column: span 3; /* Takes up 3 of 12 columns (25%) */
+    color: #333; /* Text color for visibility */
+}
+
+/* Profile Box Content Styles */
+.profile-box .content p {
+    background-color: #f8f8f8; /* Light grey background for each paragraph for contrast */
+    border-left: 4px solid #C41889; /* A colored accent on the left side */
+    border-right: 4px solid #C41889; /* A colored accent on the left side */
+    padding: 10px 20px; /* Spacing inside each paragraph */
+    margin: 10px 0; /* Space between paragraphs */
+    border-radius: 2px; /* Rounded corners for aesthetics */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-weight: 200; /* Medium font weight for a bit of emphasis */
+    color: #333; /* Dark grey color for text for better readability */
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+    font-size: small;
+}
+
+.profile-box .content p:hover {
+    background-color: #eaeaea; /* Lighter grey background on hover for interaction feedback */
+}
+
+
+.activity-reports-box {
+    grid-column: 4 / span 9; /* Starts at 4th column line and spans 9 columns */
+    grid-row: 1;
+}
+
+.upcoming-activities-box {
+    grid-column: span 8; /* Takes up 8 of 12 columns (roughly 65%) */
+    grid-row: 2;
+}
+
+.new-session-box {
+    grid-column: 9 / span 4; /* Starts at 9th column line and spans 4 columns */
+    grid-row: 2;
 }
 
 /* Buttons and Inputs */
@@ -115,7 +126,6 @@ input[type="password"] {
     width: 100%;
 }
 
-
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .container {
@@ -124,15 +134,11 @@ input[type="password"] {
     }
 
     .floating-box {
+        background: #FFFFFF; /* Reset to white background for mobile */
         margin-bottom: 20px;
     }
 
     .floating-box .header {
         padding: 5% 10%; /* Reduce padding on smaller screens */
-    }
-
-    .floating-box .content {
-        padding: 10px;
-        height: auto; /* Adjust height for mobile to be automatic */
     }
 }
