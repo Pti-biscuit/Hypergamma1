@@ -1,0 +1,138 @@
+/* General Styles */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #262262, #C41889); /* Gradient background */
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 80%; /* Take up 80% of the page's width */
+    max-width: 1800px; /* Optional: if you want to limit the maximum width */
+    margin: 0 auto; /* Centering the container */
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* Create a 12-column grid */
+    grid-template-rows: auto auto;
+    gap: 20px; /* Space between grid items */
+    background: transparent; /* Ensure the background is transparent */
+    padding: 20px; /* Padding to prevent content from touching the edges */
+}
+
+/* Set the column span for each box */
+.profile-box {
+    grid-column: span 3; /* Profile box takes up 3 of 12 columns (25%) */
+}
+
+.activity-reports-box {
+    grid-column: 4 / span 9; /* Starts at 4th column line and spans 9 columns */
+}
+
+.upcoming-activities-box {
+    grid-column: span 8; /* Upcoming activities box takes up 8 of 12 columns (roughly 65%) */
+}
+
+.new-session-box {
+    grid-column: 9 / span 4; /* Starts at 9th column line and spans 4 columns */
+}
+
+
+
+
+/* Remove the background from the generic floating-box class to avoid the box effect on the background */
+.floating-box {
+    background: none; /* No background for the general floating box */
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    overflow: hidden; /* Ensures that children elements do not overflow the rounded corners */
+}
+
+.floating-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Header of each box */
+.floating-box .header {
+    background: #d2d2d7;
+    color: #333; /* Dark text color for contrast */
+    padding: 10px 20px;
+    font-size: 1.2rem;
+}
+
+/* Profile Box - Full grey */
+.profile-box {
+    background: #d2d2d7; /* Full grey background */
+    grid-row: 1;
+}
+
+/* Activity Reports Box - Grey header */
+.activity-reports-box {
+    grid-row: 1;
+    grid-column: span 2;
+}
+
+/* Upcoming Activities Box - Grey header */
+.upcoming-activities-box {
+    grid-row: 2;
+}
+
+/* New Session Box - Grey header */
+.new-session-box {
+    grid-row: 2;
+}
+
+/* Content of each box */
+.floating-box .content {
+    background: #FFFFFF; /* White background for the content area */
+    color: #333;
+    padding: 20px;
+    height: 90%; /* Adjust the height of the content to be 90% of the box */
+}
+
+/* Buttons and Inputs */
+button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background: #262262;
+    color: white;
+    font-size: 1rem;
+}
+
+button:hover {
+    background: #C41889;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+    }
+
+    .floating-box {
+        margin-bottom: 20px;
+    }
+
+    .floating-box .header {
+        padding: 5% 10%; /* Reduce padding on smaller screens */
+    }
+
+    .floating-box .content {
+        padding: 10px;
+        height: auto; /* Adjust height for mobile to be automatic */
+    }
+}

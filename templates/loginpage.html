@@ -84,6 +84,23 @@
             }
         }
         });
+
+         // Wait until the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        // Your existing modal and other related code...
+
+        // Form submission handling
+        var loginForm = document.querySelector('.login-form'); // Make sure this selects your login form correctly
+
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Redirect to the datapage.html
+            window.location.href = "../templates/datapage.html";
+        });
+    });
+
+
     </script>
     
   
