@@ -1,6 +1,7 @@
 /* General Styles */
 body, html {
-    height: 100%;
+    width: 100%; /* Ensure the html and body span the full width */
+    height: 100%; /* Ensure the html and body span the full height */
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to right, #262262, #C41889); /* Gradient background */
@@ -9,7 +10,6 @@ body, html {
     align-items: center;
     padding: 0;
     overflow: hidden;
-    position: relative; /* Needed to position the pseudo-element */
 }
 
 /* Transparent Overlay */
@@ -20,7 +20,7 @@ body::before {
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(255, 255, 255, 0.2); /* White color with 20% opacity */
+    background: rgba(255, 255, 255, 0.1); /* White color with 20% opacity */
     z-index: 1; /* Above the background, below the content */
 }
 
@@ -30,20 +30,20 @@ body::before {
     z-index: 2;
 }
 
-
 .container {
-    width: 80%;
-    max-width: 1800px;
+    width: 80%; /* Full width */
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto auto;
     gap: 20px;
+    padding: 20px; /* Padding to prevent content from touching the edges */
 }
+
 
 /* Floating Boxes Styles */
 .floating-box {
     background: #FFFFFF; /* Default background for content areas */
-    border-radius: 15px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden; /* Ensures that children elements do not overflow the rounded corners */
     transition: transform 0.3s ease;
@@ -126,11 +126,13 @@ input[type="password"] {
     width: 100%;
 }
 
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .container {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(4, auto);
+        padding: 20px; /* Adjust padding for mobile */
     }
 
     .floating-box {
