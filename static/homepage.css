@@ -101,6 +101,40 @@ body::before {
     grid-row: 1;
 }
 
+/* Activity Reports Content Styles */
+.activity-reports-box .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-template-rows: repeat(3, auto); /* Three rows */
+    gap: 10px; /* Space between grid items */
+}
+
+/* Document Placeholder Styles */
+.document-placeholder {
+    border-bottom: 1px solid #eaeaea;
+    border-radius: 4px;
+    padding: 10px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background-color: transparent;
+    font-size: 0.75rem;
+    color: #333;
+    font-weight: 200; /* Medium font weight for a bit of emphasis */
+}
+
+.document-placeholder img {
+    width: 24px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.document-placeholder span {
+    display: block;
+}
+
+
 .reports-icon {
     position: absolute; /* Absolute position relative to the header */
     top: 10px; /* Adjust as needed to fit the design */
@@ -120,7 +154,48 @@ body::before {
 .upcoming-activities-box {
     grid-column: span 8; /* Takes up 8 of 12 columns (roughly 65%) */
     grid-row: 2;
+    min-height: 100px; /* Set a minimum height */
 }
+
+/* Upcoming Activities Box Content Styles */
+.upcoming-activities-box .content {
+    padding: 10px;
+}
+
+/* Task List Styles */
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Space between tasks */
+    font-size: 0.75rem;
+    color: #333;
+    font-weight: 200; /* Medium font weight for a bit of emphasis */
+}
+
+.task-checkbox {
+    margin-right: 10px; /* Space between checkbox and task title */
+}
+
+.task-title {
+    flex-grow: 1;
+}
+
+.task-done .task-title {
+    text-decoration: line-through; /* Strikethrough for completed tasks */
+    color: #aaa; /* Grey out the completed task's text */
+}
+
+.task-checkbox:checked + .task-title {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
 
 .checklist-icon {
     position: absolute; /* Absolute position relative to the header */
@@ -141,6 +216,7 @@ body::before {
 .new-session-box {
     grid-column: 9 / span 4; /* Starts at 9th column line and spans 4 columns */
     grid-row: 2;
+    min-height: 100px; /* Set a minimum height */
 }
 
 /* New Session Box Content Styles */
@@ -158,7 +234,9 @@ body::before {
     width: auto; /* Maintain aspect ratio */
     height: auto; /* Maintain aspect ratio */
     cursor: pointer; /* Change cursor to pointer to indicate clickability */
+    top: -20px; /* Move the button 10 pixels upwards */
 }
+
 
 /* Optionally, add hover effect for interaction feedback */
 .play-button-image:hover {
