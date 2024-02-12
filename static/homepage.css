@@ -12,6 +12,12 @@ body, html {
     overflow: hidden;
 }
 
+/* Header Text Styles */
+.header-text {
+    margin-left: 20px; /* Add enough left margin to avoid overlapping with the icon */
+}
+
+
 /* Transparent Overlay */
 body::before {
     content: '';
@@ -53,12 +59,16 @@ body::before {
     transform: translateY(-5px);
 }
 
+/* Header of each floating box */
 .floating-box .header {
     background: #EAF3FB;
     color: #333;
     padding: 10px 20px;
     font-size: 1rem;
+    position: relative; /* This is necessary to position children absolutely relative to this parent */
 }
+
+
 
 /* Specific Box Styles */
 .profile-box {
@@ -69,13 +79,12 @@ body::before {
 
 /* Profile Box Content Styles */
 .profile-box .content p {
-    background-color: #f8f8f8; /* Light grey background for each paragraph for contrast */
+    background-color: transparent; /* Light grey background for each paragraph for contrast */
     border-left: 4px solid #C41889; /* A colored accent on the left side */
     border-right: 4px solid #C41889; /* A colored accent on the left side */
     padding: 10px 20px; /* Spacing inside each paragraph */
     margin: 10px 0; /* Space between paragraphs */
     border-radius: 2px; /* Rounded corners for aesthetics */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     font-weight: 200; /* Medium font weight for a bit of emphasis */
     color: #333; /* Dark grey color for text for better readability */
     transition: background-color 0.3s ease; /* Transition for hover effect */
@@ -92,9 +101,41 @@ body::before {
     grid-row: 1;
 }
 
+.reports-icon {
+    position: absolute; /* Absolute position relative to the header */
+    top: 10px; /* Adjust as needed to fit the design */
+    left: 10px; /* Adjust as needed to fit the design */
+    width: 24px; /* Adjust size as needed */
+    height: 24px; /* Adjust size as needed */
+    /* No need for border-radius or background-color unless you want a circle background */
+}
+
+/* Now remove the border-radius and background-color if you don't need a circular background */
+.reports-icon img {
+    display: block; /* Remove any default inline spacing */
+    width: 100%; /* The image will fill the container */
+    height: auto; /* Maintain aspect ratio */
+}
+
 .upcoming-activities-box {
     grid-column: span 8; /* Takes up 8 of 12 columns (roughly 65%) */
     grid-row: 2;
+}
+
+.checklist-icon {
+    position: absolute; /* Absolute position relative to the header */
+    top: 10px; /* Adjust as needed to fit the design */
+    left: 10px; /* Adjust as needed to fit the design */
+    width: 24px; /* Adjust size as needed */
+    height: 24px; /* Adjust size as needed */
+    /* No need for border-radius or background-color unless you want a circle background */
+}
+
+/* Now remove the border-radius and background-color if you don't need a circular background */
+.checklist-icon img {
+    display: block; /* Remove any default inline spacing */
+    width: 100%; /* The image will fill the container */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .new-session-box {
@@ -102,21 +143,30 @@ body::before {
     grid-row: 2;
 }
 
+/* New Session Box Content Styles */
+.new-session-box .content {
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100%; /* Take full height of the container */
+}
+
+/* Play Button Image Styles */
+.play-button-image {
+    max-width: 50px; /* Adjust size as needed */
+    max-height: 50px; /* Adjust size as needed */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer; /* Change cursor to pointer to indicate clickability */
+}
+
+/* Optionally, add hover effect for interaction feedback */
+.play-button-image:hover {
+    opacity: 0.8; /* Make the image slightly transparent on hover */
+}
+
+
 /* Buttons and Inputs */
-button {
-    padding: 10px 15px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    background: #262262;
-    color: white;
-    font-size: 1rem;
-}
-
-button:hover {
-    background: #C41889;
-}
-
 input[type="text"],
 input[type="email"],
 input[type="password"] {
