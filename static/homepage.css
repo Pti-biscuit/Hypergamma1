@@ -45,6 +45,19 @@ body::before {
     padding: 20px; /* Padding to prevent content from touching the edges */
 }
 
+/* General Responsive Adjustments */
+.floating-box .header,
+.floating-box .content {
+    overflow: hidden; /* Prevent content from overflowing the box */
+    text-overflow: ellipsis; /* Add an ellipsis if the text is too long */
+    white-space: nowrap; /* Prevent text from wrapping to a new line */
+}
+
+/* Profile Box Adjustments */
+.profile-box .content p {
+    white-space: normal; /* Allow text to wrap inside paragraphs */
+}
+
 
 /* Floating Boxes Styles */
 .floating-box {
@@ -270,5 +283,67 @@ input[type="password"] {
 
     .floating-box .header {
         padding: 5% 10%; /* Reduce padding on smaller screens */
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        /* Adjust the container's grid template columns for a single column layout */
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+        padding: 20px; /* Add padding to prevent content from touching the edges */
+    }
+
+    /* Adjust the floating boxes to be full width on smaller screens */
+    .floating-box {
+        grid-column: 1 / -1; /* Stretch to the full width of the grid */
+    }
+
+    /* Reduce font sizes for smaller screens */
+    .floating-box .header,
+    .floating-box .content {
+        font-size: 0.8rem;
+    }
+
+    /* Adjust padding inside the headers and content areas */
+    .floating-box .header {
+        padding: 10px;
+    }
+    .floating-box .content {
+        padding: 10px;
+    }
+
+    /* Ensure images within headers do not take too much space */
+    .reports-icon img,
+    .checklist-icon img,
+    .play-button-image {
+        width: 16px; /* Adjust the size of icons */
+        height: auto;
+    }
+
+    /* Adjust the layout of items within the task list */
+    .task-list-item {
+        flex-direction: column; /* Stack checkbox and title vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+    .task-checkbox {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 5px; /* Add space between checkbox and title */
+    }
+}
+
+/* Add more breakpoints as needed for different screen sizes */
+@media (max-width: 480px) {
+    /* Further reduce font sizes and padding for very small screens */
+    .floating-box .header,
+    .floating-box .content {
+        font-size: 0.7rem;
+    }
+    .floating-box .header {
+        padding: 8px;
+    }
+    .floating-box .content {
+        padding: 8px;
     }
 }
