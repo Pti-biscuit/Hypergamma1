@@ -1,0 +1,86 @@
+/* General Styles */
+body.signup-page {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #262262, #C41889); /* Gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-container {
+    background: #FFF;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    display: flex; /* Add flex display */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+}
+
+.signup-form {
+    width: 100%; /* Ensure form takes the full width of its parent */
+}
+
+.signup-form h2 {
+    color: #262262;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    width: 100%; /* Ensure form group takes full width */
+    margin-bottom: 20px; /* Adjust bottom margin */
+}
+
+.form-group label {
+    display: block;
+    color: #262262;
+    margin-bottom: 5px;
+    text-align: left; /* Align text to the left */
+}
+
+.form-group input {
+    padding: 15px;
+    width: calc(100% - 30px); /* Subtract padding from total width */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    display: block; /* Ensure input displays as block */
+    margin-left: auto; /* Auto margins for horizontal centering */
+    margin-right: auto; /* Auto margins for horizontal centering */
+}
+
+.signup-submit-btn {
+    padding: 15px;
+    width: calc(100% - 30px); /* Subtract padding from total width */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #C41889;
+    color: white;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    display: block; /* Ensure button displays as block */
+    margin-left: auto; /* Auto margins for horizontal centering */
+    margin-right: auto; /* Auto margins for horizontal centering */
+    margin-top: 20px; /* Add top margin for spacing from last input */
+}
+
+.signup-submit-btn:hover {
+    background-color: #a3157a;
+}
+
+@media (max-width: 768px) {
+    .signup-container {
+        padding: 20px;
+    }
+
+    .signup-form h2 {
+        margin-bottom: 20px;
+    }
+}
