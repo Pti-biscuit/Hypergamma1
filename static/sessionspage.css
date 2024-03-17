@@ -1,0 +1,136 @@
+body, html {
+    margin: 0;
+    padding: 60px 0 0 0; /* Added padding at the top to compensate for the fixed header */
+    font-family: 'Poppins', sans-serif;
+    background: #f4f4f4;
+    width: 100%;
+    height: 100%;
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #FFF;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo Style */
+.app-header .logo {
+    max-height: 15px; /* Max-height to maintain aspect ratio */
+    max-width: 100%; /* Ensures the logo doesn't exceed its container width */
+    width: auto; /* Maintains aspect ratio */
+    height: auto; /* Maintains aspect ratio */
+    /* If you want to set a specific width, replace 'auto' with a value like '120px' */
+}
+
+.profile-icon img {
+    width: 40px; /* Adjust as needed */
+    height: 40px; /* Adjust as needed */
+    border-radius: 50%;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 80px 20px 20px; /* Increased top margin to create space below the header */
+    flex-wrap: wrap; /* Allows items to wrap in smaller screens */
+}
+
+.therapist-section, .appointments-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 45%; /* Adjust based on preference */
+    margin-top: 20px; /* Additional margin for spacing */
+}
+
+.therapist-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Adds space between the header and the rest of the content */
+}
+
+.therapist-icon {
+    margin-right: 10px; /* Space between the icon and the title */
+    width: 24px; /* Adjust as needed */
+    height: 24px; /* Adjust as needed */
+}
+
+.therapist-info {
+    display: block; /* Ensures content is displayed under the title */
+}
+
+.therapist-info h2 {
+    margin: 0; /* Remove margin to align title properly with the icon */
+}
+
+
+.appointments-section h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block; /* Aligns status badges next to names */
+}
+
+.online {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.offline {
+    background-color: #f44336;
+    color: white;
+}
+
+.chat-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; /* Make the button block level for full width */
+    width: auto; /* Allows button to size according to text */
+    margin-top: 10px;
+}
+
+.chat-button:hover {
+    background-color: #0056b3;
+}
+
+ul.appointments-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.appointments-list li {
+    background: #e9e9e9;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .therapist-section, .appointments-section {
+        width: 90%; /* Adjust for mobile */
+        margin-top: 20px; /* Ensure spacing between sections on mobile */
+    }
+}
